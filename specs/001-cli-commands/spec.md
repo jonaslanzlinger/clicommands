@@ -104,8 +104,9 @@ As a user, I want to assign and remove tags on saved snippets so I can categoriz
 ## Assumptions
 
 -  This is primarily a local, single-user CLI tool. No remote sync or authentication is required for the MVP.
--  Data is stored locally (file or lightweight local store) and designed for small to medium personal collections (up to ~5k entries). If users need larger datasets or sync, that is out of scope for MVP.
--  Tag names are normalized to lowercase for search and storage.
+-  Data is stored locally as a plain JSON file and designed for small to medium personal collections (up to ~5k entries). JSON is chosen for portability, ease of backup, and manual editing. If users need larger datasets or sync, that is out of scope for MVP.
+-  Tag names are always stored and displayed in lowercase. This avoids confusion and ensures consistent search and tagging behavior.
+-  When importing from clipboard, the tool never sets the snippet context automatically. The user must set context manually if desired.
 -  The term "lightweight" implies minimal runtime dependencies and that the tool can be installed and run on common developer machines.
 
 ## Notes
